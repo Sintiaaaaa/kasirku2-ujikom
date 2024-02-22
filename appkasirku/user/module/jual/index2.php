@@ -78,7 +78,7 @@
 									<td>
 										<!-- aksi ke table penjualan -->
 										<form method="POST" action="fungsi2/edit/edit.php?jual=jual">
-												<input type="number" name="jumlah" value="<?php echo $isi['jumlah'];?>" class="form-control">
+												<input type="number"  min = "1" name="jumlah" value="<?php echo $isi['jumlah'];?>" class="form-control">
 												<input type="hidden" name="id" value="<?php echo $isi['id_penjualan'];?>" class="form-control">
 												<input type="hidden" name="id_barang" value="<?php echo $isi['id_barang'];?>" class="form-control">
 											</td>
