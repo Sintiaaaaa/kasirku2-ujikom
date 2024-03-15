@@ -44,7 +44,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login - POS Codekop</title>
+    <title>Login - Kasirku</title>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -70,16 +70,25 @@
 							<form class="form-login" method="POST">
 								<div class="form-group">
 									<input type="text" class="form-control form-control-user" name="user"
-										placeholder="User ID" autofocus>
+										placeholder="Nama" autofocus>
 								</div>
 								<div class="form-group">
 									<input type="password" class="form-control form-control-user" name="pass"
-										placeholder="Password">
+										placeholder="Kata Sandi">
 								</div>
 								<button class="btn btn-primary btn-block" name="proses" type="submit"><i
 										class="fa fa-lock"></i>
 									SIGN IN</button>
 							</form>
+                            <div class="text-center">
+								<a class="small" href="register.php">Tidak Punya Akun? Register!</a>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 							<!-- <hr>
 							<div class="text-center">
 								<a class="small" href="forgot-password.html">Forgot Password?</a>

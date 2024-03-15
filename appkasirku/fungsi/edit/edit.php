@@ -49,7 +49,38 @@ if (!empty($_SESSION['admin'])) {
         $row -> execute($data);
         echo '<script>window.location="../../index.php?page=barang&success-stok=stok-data"</script>';
     }
-
+    if (!empty($_POST['role'])) {
+        $id = htmlentities($_POST['id_login']);
+        $user = htmlentities($_POST['user']);
+        $pass = htmlentities($_POST['pass']);
+        $id_member = htmlentities($_POST['id_member']);
+        $role = htmlentities($_POST['role']);
+        $id_member = htmlentities($_POST['id_member']);
+        $nm_member = htmlentities($_POST['nm_member']);
+        $alamat_member = htmlentities($_POST['alamat_member']);
+        $telepon = htmlentities($_POST['telepon']);
+        $email= htmlentities($_POST['email']);
+        $NIK = htmlentities($_POST['NIK']);
+        // Data untuk update tabel login
+        $login_data = array($user, $pass, $id_member, $role, $id);
+    
+        // Data untuk update tabel member
+        $member_data = array($_POST['nm_member'], $_POST['telepon'], $_POST['email'], $_POST['NIK'], $id_member);
+    
+        // Query untuk update tabel login
+        $login_sql = 'UPDATE login SET user=?, pass=?, id_member=?, role=? WHERE id_login=?';
+        $login_row = $config->prepare($login_sql);
+        $login_row->execute($login_data);
+    
+        // Query untuk update tabel member
+        $member_sql = 'UPDATE member SET nm_member=?, telepon=?, email=?, NIK=? WHERE id_member=?';
+        $member_row = $config->prepare($member_sql);
+        $member_row->execute($member_data);
+    
+        echo '<script>window.location="../../index.php?page=role/edit&role='.$id.'&success=edit-data"</script>';
+    }
+    
+    
     if (!empty($_GET['barang'])) {
         $id = htmlentities($_POST['id']);
         $kategori = htmlentities($_POST['kategori']);

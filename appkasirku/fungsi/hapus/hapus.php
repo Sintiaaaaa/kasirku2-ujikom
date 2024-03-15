@@ -20,6 +20,15 @@ if (!empty($_SESSION['admin'])) {
         $row -> execute($data);
         echo '<script>window.location="../../index.php?page=barang&&remove=hapus-data"</script>';
     }
+    
+    if (!empty(htmlentities($_GET['role']))) {
+        $id= htmlentities($_GET['id_login']);
+        $data[] = $id_login;
+        $sql = 'DELETE FROM login WHERE id_login=?';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=role&&remove=hapus-data"</script>';
+    }
 
     if (!empty(htmlentities($_GET['jual']))) {
         $dataI[] = htmlentities($_GET['brg']);
